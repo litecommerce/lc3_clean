@@ -1526,6 +1526,10 @@ body.store-cart #main h1 {
   text-align: center;
 }
 
+#cart-right .totals li.button button.disabled span {
+  background-image: none;
+}
+
 #cart-right .box {
   padding: 0px;
   background-color: #f6f6f6;
