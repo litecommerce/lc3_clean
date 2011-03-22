@@ -93,22 +93,52 @@
 {
 	height: 90px;
   width: 100%;
-  display: table;
 }
+
+#header-area li
+{
+  float: left;
+  list-style: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0;
+  position: relative;   /* Position nested menus below parent menus */
+  background: none;
+}
+
+#header-area li#logo {
+  width: 40%;
+}
+
+#header-area li#header-bar {
+  width: 40%;
+  padding: 0px 20px 0px 0px;
+}
+
+#header-area li li {
+  float: inherit;
+  list-style: inherit;
+  padding: inherit;
+  margin: inherit;
+  position: inherit;
+}
+
+#header {
+  float: right;
+}
+
+
 
 #logo,
 #name-and-slogan,
 #header,
 #header-bar
 {
-  display: table-cell;
 }
 
 #logo,
 #header,
 #header-bar
 {
-  width: 1px;
 }
 
 #logo,

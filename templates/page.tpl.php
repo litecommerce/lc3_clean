@@ -80,17 +80,17 @@
 
     <?php print $messages; ?>
 
-    <div id="header-area">
+    <ul id="header-area">
       <?php if ($logo): ?>
-        <div id="logo">
+        <li id="logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
           </a>
-        </div>
+        </li>
       <?php endif; ?>
 
       <?php if ($site_name): ?>
-        <div id="name-and-slogan">
+        <li id="name-and-slogan">
 
           <?php if ($title): ?>
             <div id="site-name">
@@ -106,10 +106,10 @@
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
 
-        </div>
+        </li>
       <?php endif; ?>
 
-      <div id="header-bar">
+      <li id="header-bar">
 
         <?php if ($page['account_links']): ?>
           <?php print render($page['account_links']); ?>
@@ -121,15 +121,17 @@
           </div></div>
         <?php endif; ?>
 
-      </div>
+      </li>
 
       <?php if ($page['header']): ?>
-        <div id="header"><div class="section">
-          <?php print render($page['header']); ?>
-        </div></div>
+        <li id="header">
+          <div class="section">
+            <?php print render($page['header']); ?>
+          </div>
+        </li>
       <?php endif; ?>
 
-    </div>
+    </ul>
 
     <?php if ($main_menu): ?>
       <?php print render($main_menu); ?>

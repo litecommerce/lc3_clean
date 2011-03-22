@@ -778,7 +778,6 @@ ul.tabs li
 {
   text-align: right;
   white-space: nowrap;
-  width: 100%;
 }
 
 /* Action links */
@@ -824,7 +823,7 @@ ul.inline li
  * Account links
  */
 
-ul.account-links
+#header-bar ul.account-links
 {
   padding: 0;
   margin: 0;
@@ -832,7 +831,7 @@ ul.account-links
   line-height: 46px;
 }
 
-ul.account-links li
+#header-bar ul.account-links li
 {
   display: inline;
   list-style: none;
@@ -840,12 +839,12 @@ ul.account-links li
   padding: 0;
 }
 
-ul.account-links a
+#header-bar ul.account-links a
 {
   text-decoration: none;
 }
 
-ul.account-links a:hover
+#header-bar ul.account-links a:hover
 {
   text-decoration: underline;
 }
@@ -1056,20 +1055,6 @@ ul.account-links a:hover
 /*
  * Search box
  */
-
-.simple-search-product-form
-{
-  float: right;
-}
-
-#search input.form-text
-{
-  width: 232px;
-  float: right;
-  font-size: 12px;
-  background: url(../images/search.png) no-repeat 217px 3px;
-  outline: none;
-}
 
 #search div.form-actions
 {

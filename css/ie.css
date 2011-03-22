@@ -327,3 +327,11 @@ ul.display-modes li
   padding: 0;
   margin: 0;
 }
+
+#header-area li#header {
+  z-index: 1000;
+}
+
+#header-bar ul.account-links {
+  width: 40%;
+}
