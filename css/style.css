@@ -252,6 +252,15 @@ ul.primary li a
   border-top-right-radius: 12px;
 }
 
+table#header-area,
+  table#header-area tbody
+{
+  border-collapse: inherit;
+  border: 0px none;
+  border-top: 0px none transparent !important;
+}
+
+
 #header .block:first-child .content,
 #header .block:first-child .content > div
 {
