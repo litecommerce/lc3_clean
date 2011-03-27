@@ -327,3 +327,26 @@ ul.display-modes li
   padding: 0;
   margin: 0;
 }
+
+#header-area {
+  z-index: 2500;
+}
+
+#header-area td#header 
+{
+  z-index: 3000;
+  zoom: 1;
+  position: relative;
+}
+
+#header-bar ul.account-links {
+  width: 40%;
+}
+
+.estimator button {
+  width: 200px;
+}
+
+#cart button.bright {
+  width: 180px;
+}

@@ -89,11 +89,32 @@
  * HEADER
  */
 
-#header-area
+table#header-area
 {
 	height: 90px;
   width: 100%;
-  display: table;
+  margin-top: -2px;
+}
+
+#header-area td
+{
+  padding: 0px 0px 0px 0px;
+  margin: 0;
+  background: none;
+  border: none 0px;
+}
+
+#header-area td#logo {
+  width: 50%;
+}
+
+#header-area td#header-bar {
+  padding: 0px 20px 0px 0px;
+  float: left;
+}
+
+#header-area td#header {
+  float: right;
 }
 
 #logo,
@@ -101,14 +122,12 @@
 #header,
 #header-bar
 {
-  display: table-cell;
 }
 
 #logo,
 #header,
 #header-bar
 {
-  width: 1px;
 }
 
 #logo,
