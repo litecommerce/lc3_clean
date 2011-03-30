@@ -145,7 +145,7 @@ function lc3_clean_page_alter(&$page)
                 '#theme' => 'links__account_links',
 
                 '#attributes' => array(
-                    'class' => array('account-links', 'inline'),
+                    'class' => array('account-links',),
                 ),
 
                 '#links' => array(
@@ -177,7 +177,7 @@ function lc3_clean_page_alter(&$page)
                 '#theme' => 'links__account_links',
 
                 '#attributes' => array(
-                    'class' => array('account-links', 'inline'),
+                    'class' => array('account-links',),
                 ),
 
                 '#links' => array(

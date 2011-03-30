@@ -27,7 +27,7 @@ function lc3_clean_popup_div(id, fade)
       fadeIn: delay,
       overlayCSS: {
         opacity: 1,
-        background: '',
+        background: ''
       }
     }
   );
