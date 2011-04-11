@@ -336,7 +336,7 @@ input.form-text,
 input[type="text"],
 select
 {
-  padding: 2px 2px 2px 6px;
+  padding: 2px 0 2px 6px;
 }
 
 input.form-text,
