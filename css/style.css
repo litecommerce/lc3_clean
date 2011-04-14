@@ -2119,8 +2119,12 @@ ul.pager li.next-page
   margin-top: 9px;
 }
 
-#user-profile-form .picture-block .user-picture {
+#user-profile-form .user-picture {
   float: left;
+}
+
+#user-profile-form .picture-block .user-picture {
+  padding-right: 10px;
 }
 
 #user-profile-form .picture-block label.option,
