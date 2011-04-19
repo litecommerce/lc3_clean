@@ -230,6 +230,8 @@ function lc3_clean_page_alter(&$page)
 
     }
 
+    // IE8 compatibility mode
+    header('X-UA-Compatible: IE=8');
 }
 
 /**
