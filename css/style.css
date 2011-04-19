@@ -2180,3 +2180,10 @@ ul.pager li.next-page
 #toolbar {
   z-index: 30000;
 }
+
+.profile .user-picture {
+  margin-top: 3em;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
