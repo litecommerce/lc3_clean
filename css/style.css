@@ -2180,3 +2180,22 @@ ul.pager li.next-page
 #toolbar {
   z-index: 30000;
 }
+
+/**
+ * Overlay support
+ */
+#overlay-container,
+.overlay-modal-background,
+.overlay-element {
+  z-index: 50000;
+}
+
+.overlay-element {
+  z-index: 50001;
+}
+
+html.overlay-open .displace-top,
+html.overlay-open .displace-bottom {
+  z-index: 60000;
+}
+

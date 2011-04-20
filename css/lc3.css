@@ -65,6 +65,7 @@ select.validation-error
   .checkout-block .payment-step ul.payments li label,
   .checkout-block form.place .terms label,
   .checkout-block .steps .shipping-step .save label,
+  .checkout-block .steps .payment-step .save label,
   .checkout-block .payment-step .same-address label
 {
   display: inline;
