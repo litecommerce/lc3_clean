@@ -23,7 +23,11 @@
 #social-links,
 #header-bar,
 #header,
-#breadcrumb
+#breadcrumb,
+#footer-area,
+#header-area,
+.order-success-panel,
+h1
 {
   display: none;
 }
