@@ -2373,6 +2373,7 @@ form.estimator .main,
   margin-right: 30px;
   margin-bottom: 20px;
   position: relative;
+  cursor: pointer;
 }
 
 .select-address ul.addresses li.last {
