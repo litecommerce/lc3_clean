@@ -2434,7 +2434,11 @@ ul.location-subnodes {
 }
 
 ul.location-subnodes li {
-  padding: 3px;
+  padding: 0px 2px;
+}
+
+ul.location-subnodes li a.current {
+  font-weight: bold;
 }
 
 /**
