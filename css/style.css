@@ -1238,24 +1238,39 @@ ul.inline li
   top: 1px;
 }
 
-div.location-node {
-  display: inline;
-  position: relative;
+ul.breadcrumb {
+  list-style: none;
 }
 
-div.location-node:hover ul.location-subnodes {
+ul.breadcrumb li.location-node {
+  float: left;
+  background: transparent none;
+  position: relative;
+  padding-left: 0px;
+  margin: 2px 0 0;
+}
+
+ul.breadcrumb li.location-node a {
+  line-height: 24px;
+}
+
+ul.breadcrumb li:first-child {
+  margin: 0px;
+}
+
+li.location-node:hover ul.location-subnodes {
   visibility: visible;
 }
 
-div.location-node.expandable {
+li.location-node.expandable {
   padding-right: 0.8em;
   background: url(../images/down_arrow.png) no-repeat right 0.6em;
 }
 
 ul.location-subnodes {
   position: absolute;
-  top: 15px;
-  right: 0px;
+  top: 20px;
+  left: 0px;
   list-style-type: none;
   background-color: #fff;
   z-index: 10000;
@@ -1267,6 +1282,10 @@ ul.location-subnodes li {
   background-image: none;
   padding: 0;
   white-space: nowrap;
+}
+
+ul.location-subnodes li a {
+  line-height: inherit;
 }
 
 .location-title-subnodes-mark {

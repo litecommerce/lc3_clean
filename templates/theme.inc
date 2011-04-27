@@ -52,20 +52,28 @@ function lc3_clean_breadcrumb($vars)
 
         // Wrap text breadcrumb items into a tag in order to align them vertically
         foreach ($breadcrumb as $k => $v) {
-            if (!empty($v) && '<' != substr($v, 0, 1)) {
-                $breadcrumb[$k] = '<span>' . $v . '</span>';
+
+            if (!empty($v)) {
+
+                if ('<' != substr($v, 0, 1)) {
+                    $breadcrumb[$k] = '<span>' . $v . '</span>';
+                }
+
+                if ('<li' != substr($v, 0, 2)) {
+                    $breadcrumb[$k] = '<li class="location-node">' . $v . '</li>';
+                }
             }
         }
 
         // Hide breadcrumb if breadcrumbs list has only first element
         if (1 < count($breadcrumb)) {
 
-            $separator = '<span class="separator">' . chr(194) . chr(187) . '</span>';
+            $separator = '<li class="location-node"><span class="separator">' . chr(194) . chr(187) . '</span></li>';
 
         	// Provide a navigational heading to give context for breadcrumb links to
     	    // screen-reader users. Make the heading invisible with .element-invisible.
             $html = '<h2 class="element-invisible">' . t('You are here') . '</h2>'
-				. '<div class="breadcrumb">' . implode(' ' . $separator . ' ', $breadcrumb) . '</div>';
+				. '<ul class="breadcrumb">' . implode(' ' . $separator . ' ', $breadcrumb) . '</ul>';
 
         	return $html;
         }
