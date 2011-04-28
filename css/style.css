@@ -1250,8 +1250,14 @@ ul.breadcrumb li.location-node {
   margin: 2px 0 0;
 }
 
-ul.breadcrumb li.location-node a {
+ul.breadcrumb li.location-node a,
+  ul.breadcrumb li.location-node span
+{
   line-height: 24px;
+}
+
+ul.breadcrumb li.location-node span.separator {
+  line-height: 20px;
 }
 
 ul.breadcrumb li:first-child {
@@ -1262,9 +1268,9 @@ li.location-node:hover ul.location-subnodes {
   visibility: visible;
 }
 
-li.location-node.expandable {
-  padding-right: 0.8em;
-  background: url(../images/down_arrow.png) no-repeat right 0.6em;
+ul.breadcrumb li.location-node.expandable {
+  padding-right: 0.9em;
+  background: url(../images/down_arrow.png) no-repeat right 0.9em;
 }
 
 ul.location-subnodes {
