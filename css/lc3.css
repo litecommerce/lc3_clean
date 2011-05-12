@@ -2395,6 +2395,10 @@ form.estimator .main,
   height: 13px;
 }
 
+.select-address ul.addresses li .remove img:hover {
+  background-position: left -13px;
+}
+
 .select-address ul.addresses li .shipping {
   position: absolute;
   right: 8px;
