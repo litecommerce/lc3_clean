@@ -1870,6 +1870,14 @@ form.estimator .main,
   padding: 15px 11px;
 }
 
+.checkout-block .disabled .step-box {
+  text-align: center;
+  color: #456583;
+  font-size: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .checkout-block .shipping-step.current .step-box,
 .checkout-block .payment-step.current .step-box, 
 .checkout-block .review-step.current .step-box .box 
