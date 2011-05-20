@@ -94,6 +94,7 @@ table#header-area
 	height: 90px;
   width: 100%;
   margin-top: -2px;
+  margin-bottom: 3px;
 }
 
 #header-area td
@@ -109,12 +110,11 @@ table#header-area
 }
 
 #header-area td#header-bar {
-  padding: 0px 20px 0px 0px;
-  float: left;
+  padding: 7px 18px 0px 0px;
+  width: 100%;
 }
 
 #header-area td#header {
-  float: right;
 }
 
 #logo,
@@ -144,7 +144,7 @@ table#header-area
 
 #header .block
 {
-  float: left;
+  float: right;
 }
 
 #header .block .content
