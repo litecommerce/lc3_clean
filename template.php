@@ -13,7 +13,6 @@ variable_set('default_nodes_main', 1);
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @version   SVN: $Id: template.php 4852 2011-01-12 01:08:10Z vvs $
  * @link      http://www.litecommerce.com/
  * @see       ____file_see____
  * @since     1.0.0

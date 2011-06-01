@@ -57,7 +57,6 @@
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @version   SVN: $Id: node--forum.tpl.php 4802 2010-12-28 11:49:28Z xplorer $
  * @link      http://www.litecommerce.com/
  * @see       ____file_see____
  * @see       template_preprocess()
