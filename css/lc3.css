@@ -269,6 +269,60 @@ table.form-data td {
   padding: 3px;
 }
 
+div.table-label label {
+  display: block;
+}
+
+ul.main-table {
+  list-style: none;
+}
+
+ul.main-table li {
+  background-image: none;
+  padding: 6px 3px;
+  float: left;
+  clear: left;
+}
+
+div.default-section {
+  float: left;
+}
+
+div.model-form-buttons {
+  clear: left;
+  padding-top: 40px;
+}
+
+ul.default-table {
+  list-style: none;
+  min-width: 450px;
+}
+
+ul.default-table li {
+  background-image: none;
+  padding: 6px 0px 0px 0px;
+  float: left;
+  clear: left;
+  font-size: 12px;
+}
+
+div.table-label {
+  float: left;
+}
+
+ul.default-table div.table-label label {
+  width: 80px;
+}
+
+div.star {
+  float: left;
+  width: 10px;
+}
+
+div.table-value {
+  float: left;
+}
+
 /* Colorbox jQuery plugin */
 #colorbox,
   #cboxOverlay,
