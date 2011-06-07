@@ -726,6 +726,33 @@ ul.subcategory-icons a
   top: -12px;
 }
 
+.products-sidebar-small-thumbnails .product-cell .product {
+  padding-left: 0px;
+}
+
+.products-sidebar-small-thumbnails div.product-photo {
+  padding-right: 8px;
+}
+
+.products-sidebar-small-thumbnails .product-name,
+.products-sidebar-big-thumbnails .product-name
+{
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.products-sidebar-small-thumbnails .product-name {
+  line-height: 18px;
+}
+
+.products-sidebar-big-thumbnails .product-name
+{
+  text-align: center;
+}
+
+.products-sidebar-small-thumbnails .product-price {
+  padding-top: 5px;
+}
 
 
 
