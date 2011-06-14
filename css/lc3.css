@@ -2478,25 +2478,6 @@ form.estimator .main,
   margin-right: 0px;
 }
 
-.select-address ul.addresses li .remove {
-  position: absolute;
-  right: 7px;
-  top: 4px;
-  text-decoration: none;
-  width: 13px;
-  height: 13px;
-}
-
-.select-address ul.addresses li .remove img {
-  background: transparent url(../images/icon_cross_circle.png) no-repeat left top;
-  width: 13px;
-  height: 13px;
-}
-
-.select-address ul.addresses li .remove img:hover {
-  background-position: left -13px;
-}
-
 .select-address ul.addresses li .shipping {
   position: absolute;
   right: 8px;
