@@ -755,6 +755,21 @@ ul.subcategory-icons a
   padding-top: 5px;
 }
 
+ul.products-sidebar-text-links li.product-cell {
+  background-image: url(../images/products-sidebar-bullet.png);
+  background-position: 1px 10px;
+  background-repeat: no-repeat;
+}
+
+ul.products-sidebar-text-links li .product {
+  line-height: normal;
+  padding-bottom: 0px;
+  padding-left: 11px;
+}
+
+.products-sidebar-text-links .product-name {
+  font-size: 14px;
+}
 
 
 /**
