@@ -771,6 +771,25 @@ ul.products-sidebar-text-links li .product {
   font-size: 14px;
 }
 
+.products .labels li {
+  background-image: url(../images/label_grey_left.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 12px;
+  height: 25px;
+}
+
+.products .labels li div {
+  background-image: url(../images/label_grey_right.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  line-height: 25px;
+  color: #fff;
+  font-style: italic;
+  padding-left: 3px;
+  padding-right: 9px;
+  font-size: 12px;
+}
 
 /**
  * Categories menu
