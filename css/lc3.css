@@ -769,6 +769,7 @@ ul.products-sidebar-text-links li .product {
 
 .products-sidebar-text-links .product-name {
   font-size: 14px;
+  font-family: Helvetica, Arial;
 }
 
 .products-grid .labels li,
@@ -781,6 +782,7 @@ ul.products-sidebar-text-links li .product {
   background-repeat: no-repeat;
   padding-left: 12px;
   height: 25px;
+  opacity: 0.9;
 }
 
 .products .labels li div {
