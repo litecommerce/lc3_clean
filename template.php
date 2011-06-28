@@ -107,7 +107,7 @@ function lc3_clean_theme(&$existing, $type, $theme, $path)
 
 /**
  * Adds account links to a page
- * 
+ *
  * @param array $page Structured array defining the page
  *
  * @return void
@@ -235,7 +235,7 @@ function lc3_clean_page_alter(&$page)
 
 /**
  * Alter the 'user-login' form
- * 
+ *
  * @param array  $form        Nested array of form elements that comprise the form.
  * @param array  $form_state  A keyed array containing the current state of the form
  * @param string $form_id     String representing the name of the form itself
@@ -289,7 +289,7 @@ function lc3_clean_form_user_login_alter(&$form, &$form_state, $form_id)
 
 /**
  * Alter the 'user-pass' form
- * 
+ *
  * @param array  $form        Nested array of form elements that comprise the form.
  * @param array  $form_state  A keyed array containing the current state of the form
  * @param string $form_id     String representing the name of the form itself
@@ -311,7 +311,7 @@ function lc3_clean_form_user_pass_alter(&$form, &$form_state, $form_id)
 
 /**
  * Alter the 'user-profile' form
- * 
+ *
  * @param array  $form        Nested array of form elements that comprise the form.
  * @param array  $form_state  A keyed array containing the current state of the form
  * @param string $form_id     String representing the name of the form itself
@@ -361,7 +361,7 @@ function lc3_clean_form_user_profile_form_alter(&$form, &$form_state, $form_id)
 
 /**
  * Hook for altering any form
- * 
+ *
  * @param array  $form        Nested array of form elements that comprise the form.
  * @param array  $form_state  A keyed array containing the current state of the form
  * @param string $form_id     String representing the name of the form itself
@@ -416,5 +416,25 @@ function lc3_clean_html_head_alter(&$head_elements)
             'content'    => 'text/css',
         ),
         '#weight' => -1000,
+    );
+
+    $head_elements['lc3_clean_content_ie_compatibility9'] = array(
+        '#type' => 'html_tag',
+        '#tag'  => 'meta',
+        '#attributes' => array(
+            'http-equiv' => 'X-UA-Compatible',
+            'content'    => 'IE=9',
+        ),
+        '#weight' => -1000,
+    );
+
+    $head_elements['lc3_clean_content_ie_compatibility8'] = array(
+        '#type' => 'html_tag',
+        '#tag'  => 'meta',
+        '#attributes' => array(
+            'http-equiv' => 'X-UA-Compatible',
+            'content'    => 'IE=8',
+        ),
+        '#weight' => -900,
     );
 }
