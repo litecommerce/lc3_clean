@@ -34,7 +34,7 @@ function lc3_clean_preprocess_html(array &$vars) {
     );
 
     // Add a special CSS class to the page when there no breadcrumb is going to be displayed
-    if (2 > count(drupal_get_breadcrumb()) < 2) {
+    if (2 > count(drupal_get_breadcrumb())) {
         $vars['classes_array'][] = 'no-breadcrumbs';
     }
 }
