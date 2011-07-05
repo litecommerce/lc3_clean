@@ -52,11 +52,11 @@ function lc3_clean_breadcrumb(array $vars) {
         // Wrap text breadcrumb items into a tag in order to align them vertically
         foreach ($breadcrumb as $k => $v) {
             if (!empty($v)) {
-                if ('<' != substr($v, 0, 1)) {
+                if ('<' !== substr($v, 0, 1)) {
                     $breadcrumb[$k] = '<span>' . $v . '</span>';
                 }
 
-                if ('<li' != substr($v, 0, 2)) {
+                if ('<li' !== substr($v, 0, 2)) {
                     $breadcrumb[$k] = '<li class="location-node">' . $v . '</li>';
                 }
             }

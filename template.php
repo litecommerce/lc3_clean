@@ -109,11 +109,10 @@ function lc3_clean_page_alter(array &$page) {
     }
 
     // Render the account links
-    $disabled_popup = (arg(0) == 'user') || (isset($user->uid) && $user->uid);
-    $links = $page['account_links'];
+    $disabled_popup = 'user' === arg(0) || !empty($user->uid);
 
-    if (isset($user->uid) && $user->uid) {
-        $links = array(
+    if (!empty($user->uid)) {
+        $page['account_links'] = array(
             'greeting-message' => array(
                 '#markup' => '<span class="greeting-message"><span>' . t('Hello') . ',</span> ' . check_plain($user->name) . '</span>',
             ),
@@ -140,7 +139,7 @@ function lc3_clean_page_alter(array &$page) {
     else {
         $attributes = $disabled_popup ? array() : array('onclick' => 'javascript: lc3_clean_popup_div("login-popup-box", true); return false;');
 
-        $links = array(
+        $page['account_links'] = array(
             'account-links' => array(
                 '#theme' => 'links__account_links',
                 '#attributes' => array(
@@ -166,8 +165,7 @@ function lc3_clean_page_alter(array &$page) {
     if (!$disabled_popup) {
         module_load_include('inc', 'user', 'user.pages');
 
-        // $popups = $page['page_bottom']['blockui-popups'];
-        $popups = array(
+        $page['page_bottom']['blockui-popups'] = array(
             'login-popup' => array(
                 '#theme_wrappers' => array('popup_box'),
                 '#id'             => 'login-popup-box',
@@ -182,9 +180,14 @@ function lc3_clean_page_alter(array &$page) {
             ),
         );
 
-        $popups['login-popup']['form']['#action'] = url('user', array('query' => drupal_get_destination()));
-        $popups['recovery-password-popup']['form']['#action'] = url('user/password', array('query' => drupal_get_destination()));
-
+        $page['page_bottom']['blockui-popups']['login-popup']['form']['#action'] = url(
+            'user',
+            array('query' => drupal_get_destination())
+        );
+        $page['page_bottom']['blockui-popups']['recovery-password-popup']['form']['#action'] = url(
+            'user/password',
+            array('query' => drupal_get_destination())
+        );
     }
 
     // IE8 compatibility mode
