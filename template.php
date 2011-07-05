@@ -104,7 +104,7 @@ function lc3_clean_page_alter(array &$page) {
     global $user;
 
     // Remove left sidebar
-    if ('store' === arg(0) && isset($page['sidebar_first']) && in_array(arg(1), array('cart', 'checkout', 'product'))) {
+    if ('store' === arg(0) && isset($page['sidebar_first']) && in_array(arg(1), array('cart', 'checkout', 'product', 'checkoutPayment'))) {
         unset($page['sidebar_first']);
     }
 
