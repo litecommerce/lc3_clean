@@ -378,7 +378,8 @@ ul.subcategory-icons a {
 .products-grid .product-cell,
 .products-grid .product-cell .ui-draggable-dragging,
 .products-sidebar .product-cell .product,
-.products-sidebar .product-cell .product.ui-draggable-dragging {
+.products-sidebar .product-cell .product.ui-draggable-dragging
+{
   border-color: #eee;
   border-style: solid;
   border-width: 1px;
@@ -407,7 +408,8 @@ ul.subcategory-icons a {
 .products-list .product-cell:hover td.product-photo,
 .products-list .product-cell:hover td.product-info,
 .products-list .ui-draggable-dragging td.product-photo,
-.products-list .ui-draggable-dragging td.product-info {
+.products-list .ui-draggable-dragging td.product-info
+{
   border-color: #bbc7d2;
 }
 
@@ -448,6 +450,7 @@ ul.subcategory-icons a {
   background-color: white;
   opacity: 0.9;
 }
+
 .products .products-table {
   border-collapse: separate;
   border-style: none;
