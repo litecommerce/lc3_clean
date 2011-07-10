@@ -115,7 +115,9 @@ function lc3_clean_preprocess_node(array &$vars) {
     }
 
     // Render the comment count as a link
-    if (defined('COMMENT_NODE_CLOSED') && COMMENT_NODE_CLOSED !== $vars['node']->comment) {
+    // NOTE: do not change "!=" to the "!==" operator:
+    // it's compared string and integer values here
+    if (defined('COMMENT_NODE_CLOSED') && COMMENT_NODE_CLOSED != $vars['node']->comment) {
         $vars['linked_comment_count'] = (isset($vars['comment_count']))
             ? l(
                 format_plural(
