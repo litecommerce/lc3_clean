@@ -351,6 +351,14 @@ form table .form-item label.option {
   margin: 0px;
 }
 
+.form-item.form-item-copy {
+  padding-left: 165px;
+}
+
+.form-item.form-item-copy label.option {
+  padding-left: 0px;
+}
+
 .form-required {
   line-height: 16px;
 }
@@ -1359,7 +1367,7 @@ div.tabs .secondary a.active {
 }
 
 .powered-by {
-  border-top: 1px solid #dbdbdb; 
+  border-top: 1px solid #dbdbdb;
   padding-top: 13px;
   padding-bottom: 10px;
   font-size: 11px;
@@ -1721,7 +1729,7 @@ form .floatable-box.float-box {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #dfdfdf;
-} 
+}
 
 .item-list ul.pager li {
   padding: 0;
