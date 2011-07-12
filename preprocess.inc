@@ -8,61 +8,64 @@
  * @category  LiteCommerce themes
  * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
+ * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
  * @link      http://www.litecommerce.com/
- * @see       ____file_see____
  * @since     1.0.0
  */
 
 /**
  * Preprocess function for html.tpl.php
- * 
- * @param array $vars Variables 
+ *
+ * @param array $vars Variables
+ *
  * @return void
- * @access public
+ * @since  1.0.0
  */
-function lc3_clean_preprocess_html(&$vars)
-{
+function lc3_clean_preprocess_html(array &$vars) {
     // Add conditional stylesheets for IE
-    drupal_add_css(path_to_theme().'/css/ie.css', array('group'=>CSS_THEME, 'browsers'=>array('IE'=>'lte IE 7', '!IE'=>FALSE), 'preprocess'=>FALSE));
+    drupal_add_css(
+        path_to_theme() . '/css/ie.css',
+        array(
+            'group'      => CSS_THEME,
+            'browsers'   => array('IE' => 'lte IE 7', '!IE' => FALSE),
+            'preprocess' => FALSE,
+        )
+    );
 
     // Add a special CSS class to the page when there no breadcrumb is going to be displayed
-    if (count(drupal_get_breadcrumb()) < 2) {
+    if (2 > count(drupal_get_breadcrumb())) {
         $vars['classes_array'][] = 'no-breadcrumbs';
     }
-
-
 }
 
 /**
- * Process function for html.tpl.php
- * 
- * @param array $vars Variables 
+ * Add conditional JavaScript for IE
+ *
+ * @param array $vars Variables
+ *
  * @return void
- * @access public
+ * @since  1.0.0
  */
-function lc3_clean_process_html(&$vars)
-{
-    // Add conditional JavaScript for IE
-    $vars['scripts'] .= '<!--[if lte IE 7]><script type="text/javascript src="'.base_path().path_to_theme().'/js/ie.js"></script><![endif]-->'."\n";
-
+function lc3_clean_process_html(array &$vars) {
+    $vars['scripts'] .= '<!--[if lte IE 7]><script type="text/javascript src="'
+        . base_path() . path_to_theme() . '/js/ie.js"></script><![endif]-->' . "\n";
 }
 
 /**
  * Preprocess function for page.tpl.php
- * 
- * @param array $vars Variables 
+ *
+ * @param array $vars Variables
+ *
  * @return void
- * @access public
+ * @since  1.0.0
  */
-function lc3_clean_preprocess_page(&$vars)
-{
+function lc3_clean_preprocess_page(array &$vars) {
     // Render social links
-    $twitter = check_plain(theme_get_setting('theme_social_link_twitter'));
+    $twitter  = check_plain(theme_get_setting('theme_social_link_twitter'));
     $facebook = check_plain(theme_get_setting('theme_social_link_facebook'));
-    $vars['twitter_link'] = $twitter ? l(t('Follow us on Twitter'), "http://www.twitter.com/#!/$twitter") : '';
-    $vars['facebook_link'] = $facebook ? l(t('Find us on Facebook'), "http://www.facebook.com/$facebook") : '';
+    $vars['twitter_link']  = $twitter  ? l(t('Follow us on Twitter'), 'http://www.twitter.com/#!/' . $twitter) : '';
+    $vars['facebook_link'] = $facebook ? l(t('Find us on Facebook'), 'http://www.facebook.com/' . $facebook) : '';
 
     // Render the main menu
     if ($vars['main_menu'] && ($pid = variable_get('menu_main_links_source', 'main-menu'))) {
@@ -78,21 +81,24 @@ function lc3_clean_preprocess_page(&$vars)
 
     // Add a hidden title for accessibility reasons
     if ($vars['page']['search']) {
-        $vars['page']['search'] = array_merge(array('header'=>array('#markup'=>'<h2 class="element-invisible">' . t('Search') . '</h2>')), $vars['page']['search']);
+        $vars['page']['search'] = array_merge(
+            array(
+                'header' => array('#markup' => '<h2 class="element-invisible">' . t('Search') . '</h2>'),
+            ),
+            $vars['page']['search']
+        );
     }
-
 }
-
 
 /**
  * Preprocess function for node.tpl.php
- * 
- * @param array $vars Variables 
+ *
+ * @param array $vars Variables
+ *
  * @return void
- * @access public
+ * @since  1.0.0
  */
-function lc3_clean_preprocess_node(&$vars)
-{
+function lc3_clean_preprocess_node(array &$vars) {
     // Display only the first uploaded image in teasers
     if ($vars['teaser'] && isset($vars['content']['field_image'])) {
         $vars['content']['field_image']['#items'] = array($vars['content']['field_image'][0]);
@@ -109,46 +115,70 @@ function lc3_clean_preprocess_node(&$vars)
     }
 
     // Render the comment count as a link
-    if (defined('COMMENT_NODE_CLOSED') && ($vars['node']->comment != COMMENT_NODE_CLOSED)) {
-        $vars['linked_comment_count'] = (isset($vars['comment_count'])) ? l(format_plural($vars['comment_count'], '1<span> comment</span>', '@count<span> comments</span>'), 'node/'.$vars['node']->nid, array('html'=>true, 'attributes'=>array('title'=>format_plural($vars['comment_count'], '1 comment', '@count comments'), 'class'=>array('comment-count'))), '#comments') : '';
-    } else {
+    // NOTE: do not change "!=" to the "!==" operator:
+    // it's compared string and integer values here
+    if (defined('COMMENT_NODE_CLOSED') && COMMENT_NODE_CLOSED != $vars['node']->comment) {
+        $vars['linked_comment_count'] = (isset($vars['comment_count']))
+            ? l(
+                format_plural(
+                    $vars['comment_count'],
+                    '1<span> comment</span>',
+                    '@count<span> comments</span>'
+                ),
+                'node/' . $vars['node']->nid,
+                array(
+                    'html'       => TRUE,
+                    'attributes' => array(
+                        'title' => format_plural($vars['comment_count'], '1 comment', '@count comments'),
+                        'class' => array('comment-count'),
+                    ),
+                ),
+                '#comments'
+            )
+            : '';
+    }
+    else {
         $vars['linked_comment_count'] = '';
     }
 
+    $comment_location = variable_get('comment_form_location_' . $vars['node']->type, COMMENT_FORM_BELOW);
+
     // Link "Add new comment" to the form on the node page
-    if (isset($vars['content']['links']['comment']['#links']['comment-add']) && (variable_get('comment_form_location_'.$vars['node']->type, COMMENT_FORM_BELOW) !== COMMENT_FORM_SEPARATE_PAGE)) {
+    if (isset($vars['content']['links']['comment']['#links']['comment-add']) && COMMENT_FORM_SEPARATE_PAGE !== $comment_location) {
+
         if ($vars['node']->teaser) {
-            $vars['content']['links']['comment']['#links']['comment-add']['href'] = drupal_lookup_path('alias', 'node/'.$vars['node']->nid);
-        } elseif ($vars['node']->type !== 'forum') {
+            $vars['content']['links']['comment']['#links']['comment-add']['href'] = drupal_lookup_path('alias', 'node/' . $vars['node']->nid);
+        }
+        elseif ('forum' !== $vars['node']->type) {
             // Remove the link if it is the node page
             unset($vars['content']['links']['comment']['#links']['comment-add']);
         }
     }
 
-
     // Forum nodes
-    if ($vars['node']->type == 'forum') {
+    if ('forum' == $vars['node']->type) {
 
         $vars['classes_array'][] = 'forum-post';
         $vars['classes_array'][] = 'forum-top';
         $vars['classes_array'][] = 'comment';
 
-        $vars['submitted'] = '<span>'.t('Posted:').'</span> '. format_date($vars['node']->created, 'custom', 'M j, Y, H:i');
+        $vars['submitted'] = '<span>' . t('Posted:') . '</span> ' . format_date($vars['node']->created, 'custom', 'M j, Y, H:i');
 
         if (isset($vars['content']['links']['comment']['#links']['comment-add'])) {
-           $vars['content']['links']['comment']['#links']['comment-add']['title'] = t('Reply');
+            $vars['content']['links']['comment']['#links']['comment-add']['title'] = t('Reply');
         }
-
-    } else {
-        // Render the submission date in a custom format
-        $vars['submitted'] = t('Submitted by !username on !datetime', array('!username' => $vars['name'], '!datetime' => format_date($vars['node']->created, 'custom', 'M j, Y &\n\d\a\s\h; H:i')));
-
     }
-
- 
+    else {
+        // Render the submission date in a custom format
+        $vars['submitted'] = t(
+            'Submitted by !username on !datetime',
+            array(
+                '!username' => $vars['name'],
+                '!datetime' => format_date($vars['node']->created, 'custom', 'M j, Y &\n\d\a\s\h; H:i'),
+            )
+        );
+    }
 }
-
-
 
 /**
  * Preprocess function for comment.tpl.php
@@ -186,29 +216,37 @@ function lc3_clean_preprocess_node(&$vars)
  * - status
  * - rdf_template_variable_attributes_array
  * - rdf_metadata_attributes_array
- * 
- * @param array $vars Variables 
+ *
+ * @param array $vars Variables
+ *
  * @return void
- * @access public
+ * @since  1.0.0
  */
-function lc3_clean_preprocess_comment(&$vars)
-{
+function lc3_clean_preprocess_comment(array &$vars) {
     $vars['title_attributes_array']['class'][] = 'subject';
-
     $vars['title'] = variable_get('comment_subject_field_' . $vars['node']->type, 1) ? $vars['comment']->subject : '';
-    if (!($vars['title'])) {
+
+    if (!$vars['title']) {
         $vars['classes_array'][] = 'comment-no-subject';
     }
 
     $uri = entity_uri('comment', $vars['comment']);
     $uri['options'] += array('attributes' => array('class' => 'permalink', 'rel' => 'bookmark'));
-    $vars['permalink'] = l('#', $uri['path'], $uri['options']);
+    $vars['permalink'] = l(t('#'), $uri['path'], $uri['options']);
 
-    $vars['submitted'] = '<span>'.t('Posted:').'</span> '. format_date($vars['comment']->created, 'custom', 'M j, Y, H:i');
+    $vars['submitted'] = '<span>' . t('Posted:') . '</span> ' . format_date($vars['comment']->created, 'custom', 'M j, Y, H:i');
 }
 
-function lc3_clean_preprocess_forum_topic_list(&$vars)
-{
+/**
+ * Preprocess forum topic list
+ *
+ * @param array $vars Variables
+ *
+ * @return void
+ * @since  1.0.0
+ */
+function lc3_clean_preprocess_forum_topic_list(array &$vars) {
+
     // Remove the first "icon" column header because now icons are inside the title column
 
     global $forum_topic_list_header;
@@ -230,13 +268,20 @@ function lc3_clean_preprocess_forum_topic_list(&$vars)
     $vars['header'] = $header;
 
     // Display topic creation dates differently
-
     if (!empty($vars['topics'])) {
         $row = 0;
+
         foreach ($vars['topics'] as $id => $topic) {
             $created = isset($topic->created) ? format_interval(REQUEST_TIME - $topic->created) : '';
             $user = user_load($vars['topics'][$id]->uid);
-            $vars['topics'][$id]->created = t('Created !date by !user',  array('!date' => '<span class="submitted-date">'.$created.'</span> ago', '!user' => l(check_plain($user->name), drupal_lookup_path('alias', 'user'.$user->uid))));
+
+            $vars['topics'][$id]->created = t(
+                'Created !date by !user',
+                array(
+                    '!date' => '<span class="submitted-date">' . $created . '</span> ago',
+                    '!user' => l($user->name, drupal_lookup_path('alias', 'user' . $user->uid)),
+                )
+            );
         }
     }
 }

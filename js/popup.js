@@ -4,15 +4,14 @@
  * BlockUI-based popup
  *
  * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
+ * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://www.litecommerce.com/
  * @since     1.0.0
  */
 
 // Display a ready-made block element
-function lc3_clean_popup_div(id, fade)
-{
+function lc3_clean_popup_div(id, fade) {
   jQuery.blockUI.defaults.css = {};
 
   var selector = '#'+id;
@@ -36,8 +35,7 @@ function lc3_clean_popup_div(id, fade)
 }
 
 // Display block message
-function lc3_clean_popup_message(data, id)
-{
+function lc3_clean_popup_message(data, id) {
   jQuery.blockUI.defaults.css = {};
 
   // Disable fade out in Linux versions of Google Chrome because jQuery renders it incorrectly in the browser
@@ -58,8 +56,7 @@ function lc3_clean_popup_message(data, id)
 
 
 // Close message box
-function lc3_clean_close_popup()
-{
+function lc3_clean_close_popup() {
 
   // Disable fade out in Linux versions of Google Chrome because jQuery renders it incorrectly in the browser
   var delay = lc3_clean_is_linux_chrome() ? 0 : 400;
@@ -72,16 +69,14 @@ function lc3_clean_close_popup()
 }
 
 // Checks whether it is a Linux Chrome browser
-function lc3_clean_is_linux_chrome()
-{
+function lc3_clean_is_linux_chrome() {
  return (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) && (navigator.userAgent.toLowerCase().indexOf('linux') > -1);
 }
 
 
 
 // Postprocess a popup window
-function lc3_clean_postprocess_popup(id)
-{
+function lc3_clean_postprocess_popup(id) {
   // Reposition
   var y = Math.round((jQuery(window).height() - jQuery('.blockMsg').height()) * 3/7);
   var x = Math.round((jQuery(window).width() - jQuery('.blockMsg').width()) / 2);
@@ -103,6 +98,4 @@ function lc3_clean_postprocess_popup(id)
     var className = 'BlockMsg-' + id;
     jQuery('.blockMsg').addClass(className);
   }
-
 }
-

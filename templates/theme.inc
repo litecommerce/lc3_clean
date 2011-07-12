@@ -8,41 +8,41 @@
  * @category  LiteCommerce themes
  * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
+ * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
  * @link      http://www.litecommerce.com/
- * @see       ____file_see____
- * @since	  1.0.0
+ * @since     1.0.0
  */
 
 /**
  * A theme-wrapper function for the main menu
- * 
+ *
  * @param array $vars Variables
- * @return void
- * @access public
+ *
+ * @return string
+ * @since  1.0.0
  */
-function lc3_clean_menu_tree__main_menu($vars)
-{
-	$attributes = isset($vars['tree']['#attributes']) ? $vars['tree']['#attributes'] : array('class' => 'menu menu-tree');
-	return '<ul '.drupal_attributes($attributes).'>'.$vars['tree']['#children'].'</ul>';
+function lc3_clean_menu_tree__main_menu(array $vars) {
+    $attributes = isset($vars['tree']['#attributes']) ? $vars['tree']['#attributes'] : array('class' => 'menu menu-tree');
+
+    return '<ul ' . drupal_attributes($attributes) . '>' . $vars['tree']['#children'] . '</ul>';
 }
 
 /**
  * Theme function rendering the breadcrumbs
- * 
- * @param array $vars Variables 
- * @return void
- * @access public
+ *
+ * @param array $vars Variables
+ *
+ * @return string
+ * @since  1.0.0
  */
-function lc3_clean_breadcrumb($vars)
-{
-	$breadcrumb = $vars['breadcrumb'];
+function lc3_clean_breadcrumb(array $vars) {
+    $breadcrumb = $vars['breadcrumb'];
 
     if (!empty($breadcrumb)) {
 
         // Replace the home link with an image
-        $img = '<img src="' . base_path() . path_to_theme() . '/images/home.png" alt="'.t('Home page').'" />';
+        $img = '<img src="' . base_path() . path_to_theme() . '/images/home.png" alt="' . t('Home page') . '" />';
         $breadcrumb[0] = preg_replace(
             '/^(<a href=[^>]+)>([^<]*)(<\/a>)$/',
             '\1 class="home-link">' . $img . '\3',
@@ -51,14 +51,12 @@ function lc3_clean_breadcrumb($vars)
 
         // Wrap text breadcrumb items into a tag in order to align them vertically
         foreach ($breadcrumb as $k => $v) {
-
             if (!empty($v)) {
-
-                if ('<' != substr($v, 0, 1)) {
+                if ('<' !== substr($v, 0, 1)) {
                     $breadcrumb[$k] = '<span>' . $v . '</span>';
                 }
 
-                if ('<li' != substr($v, 0, 2)) {
+                if ('<li' !== substr($v, 0, 2)) {
                     $breadcrumb[$k] = '<li class="location-node">' . $v . '</li>';
                 }
             }
@@ -69,48 +67,46 @@ function lc3_clean_breadcrumb($vars)
 
             $separator = '<li class="location-node"><span class="separator">' . chr(194) . chr(187) . '</span></li>';
 
-        	// Provide a navigational heading to give context for breadcrumb links to
-    	    // screen-reader users. Make the heading invisible with .element-invisible.
+            // Provide a navigational heading to give context for breadcrumb links to
+            // screen-reader users. Make the heading invisible with .element-invisible.
             $html = '<h2 class="element-invisible">' . t('You are here') . '</h2>'
-				. '<ul class="breadcrumb">' . implode(' ' . $separator . ' ', $breadcrumb) . '</ul>';
+                . '<ul class="breadcrumb">' . implode(' ' . $separator . ' ', $breadcrumb) . '</ul>';
 
-        	return $html;
+            return $html;
         }
     }
-
 }
 
 /**
  * Theme function rendering taxonomy terms
- * 
- * @param array $vars Variables 
- * @return void
- * @access public
+ *
+ * @param array $vars Variables
+ *
+ * @return string
+ * @since  1.0.0
  */
-function lc3_clean_field__taxonomy_term_reference($vars)
-{
-	$output = '';
+function lc3_clean_field__taxonomy_term_reference(array $vars) {
+    $output = '';
 
-	// Render the label, if it's not hidden.
-	if (!$vars['label_hidden']) {
-		$output .= '<span class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . ': </span>';
-	}
+    // Render the label, if it's not hidden.
+    if (!$vars['label_hidden']) {
+        $output .= '<span class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . ': </span>';
+    }
 
-	// Render the items.
-	$output .= '<ul class="inline field-items"' . $vars['content_attributes'] . '>';
-	$n = count($vars['items']);
-	foreach ($vars['items'] as $delta => $item) {
-		$classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-		$comma = (--$n) ? '<span class="comma">,</span>' : '';
-		$output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . $comma . '</li>';
-	}
-	$output .= '</ul>';
+    // Render the items.
+    $output .= '<ul class="inline field-items"' . $vars['content_attributes'] . '>';
+    $n = count($vars['items']);
+    foreach ($vars['items'] as $delta => $item) {
+        $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+        $comma = (--$n) ? '<span class="comma">,</span>' : '';
+        $output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . $comma . '</li>';
+    }
+    $output .= '</ul>';
 
-	// Render the top-level DIV.
-	$output = '<div class="terms ' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $output . '</div>';
+    // Render the top-level DIV.
+    $output = '<div class="terms ' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $output . '</div>';
 
-	return $output;
-
+    return $output;
 }
 
 /**
@@ -118,12 +114,10 @@ function lc3_clean_field__taxonomy_term_reference($vars)
  *
  * @param array $vars Variables
  *
- * @return HTML code of the element
- * @see    ____func_see____
+ * @return string
  * @since  1.0.0
  */
-function lc3_clean_popup_box($vars)
-{
+function lc3_clean_popup_box(array $vars) {
     global $theme_path;
 
     $html = '<div id="' . $vars['popup']['#id'] . '" style="display: none;">';
@@ -156,9 +150,10 @@ function lc3_clean_popup_box($vars)
  * @param array $vars An array containing an associative array with #attributes, #button_type, #name and #value properties
  *
  * @return string
+ * @since  1.0.0
  */
-function lc3_clean_button($vars)
-{
+function lc3_clean_button(array $vars) {
+
     $element = $vars['element'];
     $element['#attributes']['type'] = 'submit';
     element_set_attributes($element, array('id', 'name', 'value'));
@@ -169,28 +164,30 @@ function lc3_clean_button($vars)
     }
 
     return '<button' . drupal_attributes($element['#attributes']) . '><span>' . check_plain($element['#value']) . "</span></button>\n";
-
 }
 
 /**
  * Returns HTML for a password form element.
  *
- * @param $variables
+ * @param array $vars
  *   An associative array containing:
  *   - element: An associative array containing the properties of the element.
  *     Properties used: #title, #value, #description, #size, #maxlength,
  *     #required, #attributes.
  *
+ * @return  string
+ * @since   1.0.0
  * @ingroup themeable
  */
-function lc3_clean_password($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'password';
-  $element['#attributes']['autocomplete'] = 'off';
-  element_set_attributes($element, array('id', 'name', 'size', 'maxlength'));
-  _form_set_class($element, array('form-text'));
+function lc3_clean_password($vars) {
 
-  return '<input' . drupal_attributes($element['#attributes']) . ' />';
+    $element = $vars['element'];
+    $element['#attributes']['type'] = 'password';
+    $element['#attributes']['autocomplete'] = 'off';
+    element_set_attributes($element, array('id', 'name', 'size', 'maxlength'));
+    _form_set_class($element, array('form-text'));
+
+    return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
 
 /**
@@ -203,9 +200,9 @@ function lc3_clean_password($variables) {
  *   - quantity: The number of pages in the list.
  *
  * @return string
+ * @since  1.0.0
  */
-function lc3_clean_pager($vars)
-{
+function lc3_clean_pager(array $vars) {
     global $pager_page_array, $pager_total;
 
     $tags = $vars['tags'];
@@ -272,7 +269,7 @@ function lc3_clean_pager($vars)
             $items[] = array(
                 'class' => array('item', 'previous-page'),
                 'data' => $li_previous,
-             );
+            );
         }
 
         if ($li_first) {
@@ -280,7 +277,8 @@ function lc3_clean_pager($vars)
                'class' => array('item', 'first-page', 'page-0'),
                'data' => $li_first,
             );
-        } else {
+        }
+        else {
             $items[] = array(
                 'class' => array('item', 'first-page', 'page-0', 'selected'),
                 'data' => "<span>1</span>",
@@ -293,23 +291,23 @@ function lc3_clean_pager($vars)
                 'data' => '<span>...</span>',
             );
         }
-        
+
         for ($i = $from; $i <= $till; $i++) {
             if ($i < $pager_current) {
                 $items[] = array(
-                    'class' => array('item', 'page-'.($i-1)),
+                    'class' => array('item', 'page-' . ($i-1)),
                     'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
                 );
             }
             if ($i == $pager_current) {
                 $items[] = array(
-                    'class' => array('item', 'selected', 'page-'.($i-1)),
-                    'data' => "<span>$i</span>",
+                    'class' => array('item', 'selected', 'page-' . ($i-1)),
+                    'data' => '<span>' . $i . '</span>',
                 );
             }
             if ($i > $pager_current) {
                 $items[] = array(
-                    'class' => array('item', 'page-'.($i-1)),
+                    'class' => array('item', 'page-' . ($i-1)),
                     'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
                 );
             }
@@ -324,13 +322,14 @@ function lc3_clean_pager($vars)
 
         if ($li_last) {
             $items[] = array(
-                'class' => array('item', 'last-page', 'page-'.($pager_max-1)),
+                'class' => array('item', 'last-page', 'page-' . ($pager_max-1)),
                 'data' => $li_last,
             );
-        } else {
+        }
+        else {
             $items[] = array(
-                'class' => array('item', 'last-page', 'page-'.($pager_max-1), 'selected'),
-                'data' => "<span>$pager_max</span>",
+                'class' => array('item', 'last-page', 'page-' . ($pager_max-1), 'selected'),
+                'data' => '<span>' . $pager_max . '</span>',
             );
         }
 
@@ -341,12 +340,9 @@ function lc3_clean_pager($vars)
             );
         }
 
-        return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
-            'items' => $items,
-            'attributes' => array('class' => array('pager')),
-        ));
+        return '<h2 class="element-invisible">' . t('Pages') . '</h2>'
+            . theme('item_list', array('items' => $items, 'attributes' => array('class' => array('pager'))));
     }
-
 }
 
 /**
@@ -355,14 +351,18 @@ function lc3_clean_pager($vars)
  *
  * Added: A wrapper <div> with to class attributes: table-wrapper, clearfix to
  * deal with overflow and word-wrap and word-break issues.
+ *
+ * @param array $vars Variables
+ *
+ * @return string
+ * @since  1.0.0
  */
-function lc3_clean_status_messages($vars)
-{
+function lc3_clean_status_messages(array $vars) {
     global $theme_path;
 
     $prefixes = array(
-        'error' => t('Error: '),
-        'warnin' => t('Warning: '),
+        'error'  => t('Error') . ': ',
+        'warnin' => t('Warning') . ': ',
     );
 
     $list = drupal_get_messages($vars['display']);
@@ -375,15 +375,14 @@ function lc3_clean_status_messages($vars)
 
     if ($list) {
         foreach ($list as $type => $messages) {
-
-            $prefix = isset($prefixes[$type]) ? '<em>'.$prefixes[$type].'</em>' : '';
+            $prefix = isset($prefixes[$type]) ? '<em>' . $prefixes[$type] . '</em>' : '';
 
             foreach ($messages as $message) {
                 $output .= '<li class="' . $type . '">' . $prefix . $message . '</li>' . "\n";
             }
         }
-
-    } else {
+    }
+    else {
         $output .= '<li class="dump">Dump</li>';
     }
 
@@ -406,20 +405,21 @@ function lc3_clean_status_messages($vars)
  * Returns HTML for a sort icon.
  *
  * @param array $vars Array containing an element (with 'style' key) set to either 'asc' or 'desc'
+ *
  * @return string
+ * @since  1.0.0
  */
-function lc3_clean_tablesort_indicator($vars)
-{
+function lc3_clean_tablesort_indicator($vars) {
     if ($vars['style'] == 'asc') {
         $title = t('sort ascending');
-        $char = '&darr;';
+        $char  = '&darr;';
         $class = 'ascending-order';
-    } else {
+    }
+    else {
         $title = t('sort descending');
-        $char = '&uarr;';
+        $char  = '&uarr;';
         $class = 'descending-order';
     }
 
-    return "<span class=\"tablesort-indicator $class\" title=\"$title\"> <span>$char</span></span>";
+    return '<span class="tablesort-indicator ' . $class . '" title="' . $title . '"> <span>' . $char . '</span></span>';
 }
-

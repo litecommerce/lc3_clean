@@ -4,11 +4,12 @@
  * Top message controller
  *
  * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2010 Creative Development LLC <info@cdev.ru>. All rights reserved
+ * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://www.litecommerce.com/
  * @since     1.0.0
  */
+
 var MESSAGE_INFO    = 'status';
 var MESSAGE_WARNING = 'warning';
 var MESSAGE_ERROR   = 'error';
@@ -109,26 +110,22 @@ TopMessages.prototype.ttl = 10000;
  */
 
 // Check visibility
-TopMessages.prototype.isVisible = function()
-{
+TopMessages.prototype.isVisible = function() {
   return this.container.css('display') != 'none';
 }
 
 // Show widget
-TopMessages.prototype.show = function()
-{
+TopMessages.prototype.show = function() {
   this.container.slideDown();
 }
 
 // Hide widget
-TopMessages.prototype.hide = function()
-{
+TopMessages.prototype.hide = function() {
   this.container.slideUp();
 }
 
 // Add record
-TopMessages.prototype.addRecord = function(text, type)
-{
+TopMessages.prototype.addRecord = function(text, type) {
   if (
     !type
     || (MESSAGE_INFO != type && MESSAGE_WARNING != type && MESSAGE_ERROR != type)
@@ -143,10 +140,7 @@ TopMessages.prototype.addRecord = function(text, type)
 
   jQuery('ul', this.container).append(li);
 
-  if (
-    jQuery('li', this.container).length
-    && !this.isVisible()
-  ) {
+  if (jQuery('li', this.container).length && !this.isVisible()) {
     this.show();
   }
 
@@ -158,8 +152,7 @@ TopMessages.prototype.addRecord = function(text, type)
 }
 
 // Clear record
-TopMessages.prototype.hideRecord = function(li)
-{
+TopMessages.prototype.hideRecord = function(li) {
   if (jQuery('li:not(.remove)', this.container).length == 1) {
     this.clearRecords();
 
@@ -174,15 +167,13 @@ TopMessages.prototype.hideRecord = function(li)
 }
 
 // Clear all records
-TopMessages.prototype.clearRecords = function()
-{
+TopMessages.prototype.clearRecords = function() {
   this.hide();
   jQuery('li', this.container).remove();
 }
 
 // Set record timer
-TopMessages.prototype.setTimer = function(li)
-{
+TopMessages.prototype.setTimer = function(li) {
   li = jQuery(li).get(0);
 
   if (li.timer) {
@@ -200,8 +191,7 @@ TopMessages.prototype.setTimer = function(li)
 }
 
 // onmessage event handler
-TopMessages.prototype.messageHandler = function(text, type)
-{
+TopMessages.prototype.messageHandler = function(text, type) {
   this.addRecord(text, type);
 }
 
