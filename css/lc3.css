@@ -2265,7 +2265,7 @@ form.estimator .main,
 
 .checkout-block .payment-step ul.payments li {
   line-height: 20px;
-  padding: 5px 0px 5px 24px;
+  padding: 7px 0px 7px 24px;
   vertical-align: middle;
 }
 
@@ -2513,6 +2513,10 @@ form.estimator .main,
 
 .checkout-block form.place .button-row {
   padding-top: 7px;
+}
+
+#pay_iframe {
+  border: 1px solid #ddd;
 }
 
 /**

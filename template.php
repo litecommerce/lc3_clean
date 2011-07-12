@@ -121,7 +121,7 @@ function lc3_clean_page_alter(&$page)
     if (
         arg(0) == 'store'
         && isset($page['sidebar_first'])
-        && in_array(arg(1), array('cart', 'checkout', 'product'))
+        && in_array(arg(1), array('cart', 'checkout', 'product', 'checkoutPayment'))
     ) {
         unset($page['sidebar_first']);
     }
