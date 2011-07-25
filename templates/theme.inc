@@ -368,7 +368,7 @@ function lc3_clean_status_messages(array $vars) {
     $list = drupal_get_messages($vars['display']);
 
     $output = '<div id="status-messages"' . ($list ? '' : ' style="display: none;"') . '>' . "\n"
-        . '<a href="' . request_uri() . '" class="close" title="' . t('Close') . '">'
+        . '<a href="' . htmlentities(request_uri()) . '" class="close" title="' . t('Close') . '">'
         . theme_image(array('path' => $theme_path . '/images/spacer.gif', 'alt' => t('Close'), 'attributes' => array()))
         . '</a>' . "\n"
         . '<ul>' . "\n";
