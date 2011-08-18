@@ -955,7 +955,8 @@ div.product-details .product-image-gallery {
   color: #ff6c00;
   font-size: 36px;
   line-height: 33px;
-  margin-top: 15px;
+  margin-top: 18px;
+  display: inline-block;
 }
 
 
@@ -993,6 +994,7 @@ div.product-details .product-image-gallery {
 .product-details .product-in-stock,
 .product-quicklook .product-in-stock {
   color: #019026;
+  display: block;
 }
 
 .product-details .product-items-available {
