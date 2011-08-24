@@ -5,13 +5,8 @@
  * @file
  * Theme functions
  *
- * @category  LiteCommerce themes
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
- * @since     1.0.0
  */
 
 variable_set('default_nodes_main', 1);
@@ -45,7 +40,6 @@ require 'preprocess.inc';
  *
  * @hook   theme
  * @return array
- * @since  1.0.0
  */
 function lc3_clean_theme(array &$existing, $type, $theme, $path) {
     return array(
@@ -98,7 +92,6 @@ function lc3_clean_theme(array &$existing, $type, $theme, $path) {
  * @param array &$page Structured array defining the page
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_page_alter(array &$page) {
     global $user;
@@ -203,7 +196,6 @@ function lc3_clean_page_alter(array &$page) {
  *
  * @hook   form_FORM_ID_alter
  * @return void
- * @since  1.0.0
  *
  * @see hook_form_alter()
  * @see drupal_prepare_form()
@@ -255,7 +247,6 @@ function lc3_clean_form_user_login_alter(array &$form, array &$form_state, $form
  *
  * @hook   form_FORM_ID_alter
  * @return void
- * @since  1.0.0
  *
  * @see hook_form_alter()
  * @see drupal_prepare_form()
@@ -278,7 +269,6 @@ function lc3_clean_form_user_pass_alter(array &$form, array &$form_state, $form_
  *
  * @hook   form_FORM_ID_alter
  * @return void
- * @since  1.0.0
  *
  * @see hook_form_alter()
  * @see drupal_prepare_form()
@@ -329,7 +319,6 @@ function lc3_clean_form_user_profile_form_alter(array &$form, array &$form_state
  *
  * @hook   form_alter
  * @return void
- * @since  1.0.0
  *
  * @see hook_form_alter()
  * @see drupal_prepare_form()
@@ -355,7 +344,6 @@ function lc3_clean_form_alter(array &$form, array &$form_state, $form_id) {
  *
  * @hook   preprocess_block
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_block(array &$vars) {
     if (!$vars['block']->title) {
@@ -370,7 +358,6 @@ function lc3_clean_preprocess_block(array &$vars) {
  *
  * @hook   html_head_alter
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_html_head_alter(array &$head_elements) {
     $head_elements['lc3_clean_content_script_type'] = array(

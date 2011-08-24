@@ -5,13 +5,8 @@
  * @file
  * Theme function overrides
  *
- * @category  LiteCommerce themes
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
- * @since     1.0.0
  */
 
 /**
@@ -20,7 +15,6 @@
  * @param array $vars Variables
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_menu_tree__main_menu(array $vars) {
     $attributes = isset($vars['tree']['#attributes']) ? $vars['tree']['#attributes'] : array('class' => 'menu menu-tree');
@@ -34,7 +28,6 @@ function lc3_clean_menu_tree__main_menu(array $vars) {
  * @param array $vars Variables
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_breadcrumb(array $vars) {
     $breadcrumb = $vars['breadcrumb'];
@@ -83,7 +76,6 @@ function lc3_clean_breadcrumb(array $vars) {
  * @param array $vars Variables
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_field__taxonomy_term_reference(array $vars) {
     $output = '';
@@ -115,7 +107,6 @@ function lc3_clean_field__taxonomy_term_reference(array $vars) {
  * @param array $vars Variables
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_popup_box(array $vars) {
     global $theme_path;
@@ -150,7 +141,6 @@ function lc3_clean_popup_box(array $vars) {
  * @param array $vars An array containing an associative array with #attributes, #button_type, #name and #value properties
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_button(array $vars) {
 
@@ -176,7 +166,6 @@ function lc3_clean_button(array $vars) {
  *     #required, #attributes.
  *
  * @return  string
- * @since   1.0.0
  * @ingroup themeable
  */
 function lc3_clean_password($vars) {
@@ -200,7 +189,6 @@ function lc3_clean_password($vars) {
  *   - quantity: The number of pages in the list.
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_pager(array $vars) {
     global $pager_page_array, $pager_total;
@@ -355,7 +343,6 @@ function lc3_clean_pager(array $vars) {
  * @param array $vars Variables
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_status_messages(array $vars) {
     global $theme_path;
@@ -407,7 +394,6 @@ function lc3_clean_status_messages(array $vars) {
  * @param array $vars Array containing an element (with 'style' key) set to either 'asc' or 'desc'
  *
  * @return string
- * @since  1.0.0
  */
 function lc3_clean_tablesort_indicator($vars) {
     if ($vars['style'] == 'asc') {

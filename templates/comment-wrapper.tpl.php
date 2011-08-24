@@ -32,15 +32,11 @@
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
  *
- * @category  LiteCommerce themes
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
+ *
  * @see       template_preprocess_comment_wrapper()
  * @see       theme_comment_wrapper()
- * @since     1.0.0
  */
 ?>
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>

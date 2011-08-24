@@ -62,16 +62,12 @@
  * - $page['header']: Items for the header region.
  * - $page['footer']: Items for the footer region.
  *
- * @category  LiteCommerce themes
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
+ *
  * @see       template_preprocess()
  * @see       template_preprocess_page()
  * @see       template_process()
- * @since     1.0.0
  */
 ?>
   <div id="page-wrapper"><div id="page">

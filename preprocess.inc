@@ -5,13 +5,8 @@
  * @file
  * Preprocess functions
  *
- * @category  LiteCommerce themes
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
- * @since     1.0.0
  */
 
 /**
@@ -20,7 +15,6 @@
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_html(array &$vars) {
     // Add conditional stylesheets for IE
@@ -45,7 +39,6 @@ function lc3_clean_preprocess_html(array &$vars) {
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_process_html(array &$vars) {
     $vars['scripts'] .= '<!--[if lte IE 7]><script type="text/javascript src="'
@@ -58,7 +51,6 @@ function lc3_clean_process_html(array &$vars) {
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_page(array &$vars) {
     // Render social links
@@ -96,7 +88,6 @@ function lc3_clean_preprocess_page(array &$vars) {
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_node(array &$vars) {
     // Display only the first uploaded image in teasers
@@ -220,7 +211,6 @@ function lc3_clean_preprocess_node(array &$vars) {
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_comment(array &$vars) {
     $vars['title_attributes_array']['class'][] = 'subject';
@@ -243,7 +233,6 @@ function lc3_clean_preprocess_comment(array &$vars) {
  * @param array $vars Variables
  *
  * @return void
- * @since  1.0.0
  */
 function lc3_clean_preprocess_forum_topic_list(array &$vars) {
 

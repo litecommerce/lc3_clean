@@ -13,17 +13,14 @@
  * - $topic: An object with the raw data of the post. Unsafe, be sure
  *   to clean this data before printing.
  *
- * @package   LiteCommerce3 theme
  * @author    Creative Development LLC <info@cdev.ru>
  * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
- * @link      http://www.litecommerce.com/
+ *
  * @see       template_preprocess_forum_submitted()
  * @see       theme_forum_submitted()
  * @see       template_preprocess()
  * @see       template_preprocess_page()
  * @see       template_process()
- * @since     1.0.0
  */
 ?>
 <?php if ($time): ?>
