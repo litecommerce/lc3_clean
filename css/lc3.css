@@ -1446,6 +1446,7 @@ table.including-modifiers td
 
 table.including-modifiers td {
   white-space: nowrap;
+  padding: 6px;
 }
 
 table.including-modifiers td.value {
