@@ -2704,3 +2704,59 @@ ul.location-subnodes li a.current {
   padding-bottom: 36px;
 }
 
+/* Page tabs */
+
+.tabs-container .page-tabs
+{
+  height: 34px;
+  border-bottom: 1px solid #cadce8;
+  background: #f5f5f5;
+  padding-top: 10px;
+}
+
+.tabs-container .tab-content
+{
+  margin: 30px 0px 15px 0px;
+}
+
+.tabs-container .page-tabs ul
+{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.tabs-container .page-tabs ul li
+{
+  padding: 0;
+  margin: 0;
+  float: left;
+  background: transparent none;
+}
+
+.tabs-container .page-tabs ul li a
+{
+  -moz-border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+  background: none repeat scroll 0 0 #ebf7ff;
+  border-color: #cadce8 #cadce8;
+  border-style: solid solid none;
+  border-width: 1px 1px 0;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  padding: 9px 15px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.tabs-container .page-tabs ul li.tab-current a
+{
+  background: #fff;
+  color: #333;
+  border-bottom: 1px solid #fff;
+}
+
