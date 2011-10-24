@@ -2701,6 +2701,12 @@ ul.location-subnodes li a.current {
   padding-bottom: 36px;
 }
 
+.invoice-box .deleted-product-note {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
+}
+
 /* Page tabs */
 
 .tabs-container .page-tabs
