@@ -33,7 +33,6 @@ stylesheets[all][] = system.menus.css
 ; SCRIPTS
 ; -----------------------------------------------------------------------------
 scripts[] = js/lc3clean.js
-scripts[] = js/jquery.blockUI.js
 scripts[] = js/popup.js
 scripts[] = js/topMessages.js
 

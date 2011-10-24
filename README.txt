@@ -40,7 +40,15 @@ LC3 theme" enabled).
 2) Unpack it to the "sites/all/themes" subdirectory of your Drupal 7
 installation.
 
-3) Log in as administrator to your Drupal site, go to the "Appearance" page,
+3) The lc3_clean theme requires the libraries module be installed
+(http://drupal.org/project/libraries).
+
+You will now need to create a sites/all/libraries folder if you don't already
+have the libraries module installed. The following javascript file then need to
+be retrieved and saved to the sites/all/libraries folder:
+   > http://jquery.malsup.com/block/#download  - save file as jquery.blockUI.js 
+
+4) Log in as administrator to your Drupal site, go to the "Appearance" page,
 enable and make "Clean LC3 theme" the default Drupal theme.
 
 

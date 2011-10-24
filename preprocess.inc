@@ -26,6 +26,15 @@ function lc3_clean_preprocess_html(array &$vars) {
     )
   );
 
+  // Add jquery.blockUI.js (should be in directory sites/all/libraries)
+  if (file_exists(path_to_theme() . '/js/jquery.blockUI.js')) {
+    // Added for backward compatibility
+    drupal_add_js(path_to_theme() . '/js/jquery.blockUI.js');
+  }
+  elseif (function_exists('libraries_get_path')) {
+    drupal_add_js(libraries_get_path('jquery.blockUI.js'));
+  }
+
   // Add a special CSS class to the page when there no breadcrumb is going to be displayed
   if (2 > count(drupal_get_breadcrumb())) {
     $vars['classes_array'][] = 'no-breadcrumbs';
