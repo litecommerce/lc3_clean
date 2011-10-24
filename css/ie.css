@@ -3,9 +3,6 @@
 /**
  * @file
  * Styles specific for IE6 and IE7
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 /*
@@ -13,8 +10,8 @@
  */
 
 #logo {
-	float: left;
-	width: 354px;
+  float: left;
+  width: 354px;
 }
 
 /*

@@ -2,9 +2,6 @@
 
 /**
  * Main controller
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 (function ($) {

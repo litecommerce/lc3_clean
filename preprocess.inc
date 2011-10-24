@@ -4,9 +4,6 @@
 /**
  * @file
  * Preprocess functions.
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 /**
@@ -178,40 +175,6 @@ function lc3_clean_preprocess_node(array &$vars) {
 
 /**
  * Preprocess function for comment.tpl.php
- *
- * Available variables:
- * - elements
- * - theme_hook_suggestions
- * - zebra
- * - id
- * - directory
- * - classes_array
- * - attributes_array
- * - title_attributes_array
- * - content_attributes_array
- * - title_prefix
- * - title_suffix
- * - user
- * - db_is_active
- * - is_admin
- * - logged_in
- * - is_front
- * - comment
- * - node
- * - author
- * - created
- * - changed
- * - new
- * - picture
- * - signature
- * - title
- * - permalink
- * - submitted
- * - comment_body
- * - content
- * - status
- * - rdf_template_variable_attributes_array
- * - rdf_metadata_attributes_array
  *
  * @param array $vars
  *   Array of variables.

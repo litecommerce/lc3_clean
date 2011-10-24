@@ -74,12 +74,9 @@
  * language, e.g. $node->body['en'], thus overriding any language negotiation
  * rule that was previously applied.
  *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- *
- * @see       template_preprocess()
- * @see       template_preprocess_node()
- * @see       template_process()
+ * @see template_preprocess()
+ * @see template_preprocess_node()
+ * @see template_process()
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>

@@ -62,12 +62,9 @@
  * - $page['header']: Items for the header region.
  * - $page['footer']: Items for the footer region.
  *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- *
- * @see       template_preprocess()
- * @see       template_preprocess_page()
- * @see       template_process()
+ * @see template_preprocess()
+ * @see template_preprocess_page()
+ * @see template_process()
  */
 ?>
   <div id="page-wrapper"><div id="page">

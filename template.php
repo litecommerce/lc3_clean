@@ -4,34 +4,13 @@
 /**
  * @file
  * Theme functions.
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
-
-variable_set('default_nodes_main', 1);
 
 require 'preprocess.inc';
 
 /**
- * Implementations hook_theme().
+ * Implementats hook_theme().
  * This function provides a one-stop reference for all overriden and custom theme functions.
- *
- * Returns an array of arrays. The key to each sub-array is the internal name of the hook, and the array contains info about the hook.
- * Each array may contain the following items:
- * "arguments": (required) An array of arguments that this theme hook uses. Keys are variable names, values are default values.
- * "template": If specified, this theme implementation is a template, and this is the template file WITHOUT an extension.
- * "file": The file the implementation resides in. This file will be included prior to the theme being rendered.
- * "function": If specified, this will be the function name to invoke for this implementation.
- * "path": Custom path (relative to the Drupal root directory) of the file or the template to be used.
- * "pattern": A pattern to be used to allow this theme implementation to have a dynamic name.
- * Use __ to differentiate the dynamic portion of the theme. For example, the pattern might be: 'forum__'.
- * Then, when the forum is themed, call: theme(array('forum__'. $tid, 'forum'), $forum).
- * "preprocess functions": A list of functions used to preprocess this data. Ordinarily it's automatically filled in.
- * "override preprocess functions": Set to TRUE when a theme does NOT want the standard preprocess functions to run.
- * "type": (automatically derived) Where the theme hook is defined: 'module', 'theme_engine', or 'theme'.
- * "theme path": (automatically derived) The directory path of the theme or module, so that it doesn't need to be looked up.
- * "theme paths": (automatically derived) Array of template suggestions where .tpl.php files related to this theme hook may be found.
  *
  * @param array &$existing
  *   An array of existing implementations that may be used for override purposes.
