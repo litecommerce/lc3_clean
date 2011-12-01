@@ -93,12 +93,12 @@ function lc3_clean_preprocess_page(array &$vars) {
  */
 function lc3_clean_preprocess_node(array &$vars) {
   // Display only the first uploaded image in teasers
-  if ($vars['teaser'] && isset($vars['content']['field_image'])) {
+  if (!empty($vars['teaser']) && isset($vars['content']['field_image'])) {
     $vars['content']['field_image']['#items'] = array($vars['content']['field_image'][0]);
   }
 
    // Reorder and rename node links
-  if ($vars['teaser']) {
+  if (!empty($vars['teaser'])) {
     // Move "Read more" link to the end of the list
     if (isset($vars['content']['links']['node'])) {
       $node = $vars['content']['links']['node'];
@@ -139,7 +139,7 @@ function lc3_clean_preprocess_node(array &$vars) {
   // Link "Add new comment" to the form on the node page
   if (isset($vars['content']['links']['comment']['#links']['comment-add']) && COMMENT_FORM_SEPARATE_PAGE !== $comment_location) {
 
-    if ($vars['node']->teaser) {
+    if (!empty($vars['node']->teaser)) {
       $vars['content']['links']['comment']['#links']['comment-add']['href'] = drupal_lookup_path('alias', 'node/' . $vars['node']->nid);
     }
     elseif ('forum' !== $vars['node']->type) {
