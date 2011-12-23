@@ -1023,16 +1023,13 @@ div.product-details .continue-button-intend {
   float: left;
 }
 
-
-
-.product-details .facebook {
+.product-details .share,
+.product-details .facebook
+{
   border-top: 1px solid #e5e5e5;
   padding-top: 20px;
   margin-top: 20px;
 }
-
-
-
 
 .product-details div.tabs {
   clear: both;
