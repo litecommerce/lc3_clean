@@ -3,9 +3,6 @@
 /**
  * @file
  * Styles specific for LiteCommerce widgets
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 /**
@@ -2699,6 +2696,12 @@ ul.location-subnodes li a.current {
   border-bottom: 1px solid #bbc7d2;
   padding-top: 26px;
   padding-bottom: 36px;
+}
+
+.invoice-box .deleted-product-note {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
 }
 
 /* Page tabs */

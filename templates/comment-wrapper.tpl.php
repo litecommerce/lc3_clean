@@ -32,11 +32,8 @@
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
  *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- *
- * @see       template_preprocess_comment_wrapper()
- * @see       theme_comment_wrapper()
+ * @see template_preprocess_comment_wrapper()
+ * @see theme_comment_wrapper()
  */
 ?>
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>

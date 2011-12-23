@@ -2,9 +2,6 @@
 
 /**
  * Hacks and tweaks for IE6 and IE7 browsers
- *  
- * @author    Creative Development LLC <info@cdev.ru> 
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 /**

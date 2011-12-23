@@ -52,13 +52,10 @@
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
  *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- *
- * @see       template_preprocess()
- * @see       template_preprocess_comment()
- * @see       template_process()
- * @see       theme_comment()
+ * @see template_preprocess()
+ * @see template_preprocess_comment()
+ * @see template_process()
+ * @see theme_comment()
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>

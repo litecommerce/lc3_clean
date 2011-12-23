@@ -3,19 +3,16 @@
 /**
  * @file
  * Styles determining the page layout
- *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
  */
 
 #page-wrapper {
-	width: 960px;
-	margin: 0 auto;
-	padding: 0;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .page-admin-structure-block-demo #page-wrapper {
-	width: 1230px;
+  width: 1230px;
 }
 
 /*
@@ -23,44 +20,44 @@
  */
 
 #content {
-	padding: 0;
-	margin: 0;
-	float: left;
+  padding: 0;
+  margin: 0;
+  float: left;
   min-height: 206px; /* 206px is for the 1024x768 resolution */
 }
 
 .no-sidebars #content {
-	width: 960px;
-	float: none;
+  width: 960px;
+  float: none;
 }
 
 .sidebar-first #content {
-	width: 690px; /* 690 = 960-240-30 */
+  width: 690px; /* 690 = 960-240-30 */
 }
 
 .sidebar-second #content,
 .page-admin.two-sidebars #content {
-	width: 680px; /* 680 = 960-240-40 = 1230-240-40-240-30 */
+  width: 680px; /* 680 = 960-240-40 = 1230-240-40-240-30 */
 }
 
 .two-sidebars #content {
-	width: 410px; /* 410 = 960-240-40-240-30 */
+  width: 410px; /* 410 = 960-240-40-240-30 */
 }
 
 .sidebar {
-	width: 240px;
-	padding: 0;
-	margin: 0;
-	float: left;
+  width: 240px;
+  padding: 0;
+  margin: 0;
+  float: left;
 }
 
 #sidebar-first {
-	margin-right: 30px;
+  margin-right: 30px;
   clear: left;
 }
 
 #sidebar-second {
-	margin-left: 40px;
+  margin-left: 40px;
   clear: right;
 }
 
@@ -69,7 +66,7 @@
  */
 
 table#header-area {
-	height: 90px;
+  height: 90px;
   width: 100%;
   margin-top: -2px;
   margin-bottom: 3px;

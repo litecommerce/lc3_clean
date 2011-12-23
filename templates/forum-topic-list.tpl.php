@@ -30,11 +30,8 @@
  *   last replied to.
  * - $topic->timestamp: The raw timestamp this topic was posted.
  *
- * @author    Creative Development LLC <info@cdev.ru>
- * @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
- *
- * @see       template_preprocess_forum_topic_list()
- * @see       theme_forum_topic_list()
+ * @see template_preprocess_forum_topic_list()
+ * @see theme_forum_topic_list()
 */
 ?>
 <table id="forum-topic-<?php print $topic_id; ?>" class="forum-topic-list">

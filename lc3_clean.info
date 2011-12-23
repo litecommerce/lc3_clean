@@ -1,8 +1,3 @@
-; Module manifest
-;
-; @author    Creative Development LLC <info@cdev.ru>
-; @copyright Copyright (c) 2011 Creative Development LLC <info@cdev.ru>. All rights reserved
-
 name = Clean LC3 theme
 description = A clean theme for LiteCommerce shops
 
@@ -35,7 +30,6 @@ stylesheets[all][] = system.menus.css
 ; SCRIPTS
 ; -----------------------------------------------------------------------------
 scripts[] = js/lc3clean.js
-scripts[] = js/jquery.blockUI.js
 scripts[] = js/popup.js
 scripts[] = js/topMessages.js
 
