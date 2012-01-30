@@ -130,6 +130,10 @@
       <?php print render($main_menu); ?>
     <?php endif; ?>
 
+    <?php if ($page['subheader']): ?>
+      <div id="subheader"><?php print render($page['subheader']); ?></div>
+    <?php endif; ?>
+
     <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>

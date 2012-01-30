@@ -37,6 +37,7 @@ scripts[] = js/topMessages.js
 ; REGIONS
 ; -----------------------------------------------------------------------------
 regions[header] = Header
+regions[subheader] = Subheader
 regions[search] = Search
 regions[help] = Help
 regions[highlighted] = Highlighted
