@@ -15,7 +15,7 @@
 function lc3_clean_preprocess_html(array &$vars) {
   // Add conditional stylesheets for IE
   drupal_add_css(
-    path_to_theme() . '/css/ie.css',
+    drupal_get_path('theme', 'lc3_clean') . '/css/ie.css',
     array(
       'group'      => CSS_THEME,
       'browsers'   => array('IE' => 'lte IE 7', '!IE' => FALSE),
