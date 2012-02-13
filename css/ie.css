@@ -86,13 +86,32 @@
   z-index: 1;
 }
 
-* html #main-menu li a { /* IE6 only */
+* html #main-menu li a {  /* IE6 only */
   width: 0;
   white-space: nowrap;
+  background-image: none; /* PNGs aren't transparent in IE6, so we hide them */
 }
 
-* html #main-menu ul.menu a {
+* html #main-menu li.hover-expanded a,
+* html #main-menu li.expanded a { /* IE6 only */
+  padding-right: 20px;    /* Since now the bg image is invisible, we don't need padding for the arrow image */
+}
+
+* html #main-menu li.hover a,
+* html #main-menu li.collapsed a
+{
+  background-image: url(../images/top-menu-arrows.png);
+  background-position: bottom left;
+}
+
+* html #main-menu ul.menu a { /* IE6 only */
   width: 100%;
+  background-image: none;
+}
+
+* html #main-menu ul.menu /* IE6 only */
+{
+  width: 200px;
 }
 
 #main-menu ul.menu {
