@@ -512,7 +512,9 @@ button:active,
   background: #f8fdff;
 }
 
-button.bright {
+button.bright,
+  .review-step button.disabled.bright
+{
   border-style: none;
   padding: 5px 17px 5px;
   height: 36px;
@@ -535,6 +537,10 @@ button.disabled {
   cursor: default;
   border-color: #dfdfdf;
   color: #fff;
+}
+
+.review-step button.disabled.bright {
+  cursor: not-allowed;
 }
 
 /*
