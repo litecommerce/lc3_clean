@@ -29,6 +29,9 @@ function lc3_clean_menu_tree__main_menu(array $vars) {
  * @return string
  */
 function lc3_clean_breadcrumb(array $vars) {
+
+  $html = null;
+
   $breadcrumb = $vars['breadcrumb'];
 
   if (!empty($breadcrumb)) {
@@ -43,12 +46,12 @@ function lc3_clean_breadcrumb(array $vars) {
 
     // Wrap text breadcrumb items into a tag in order to align them vertically
     foreach ($breadcrumb as $k => $v) {
-      if (!empty($v)) {
+      $v = trim($v);
+      if (!empty($v) && is_string($v)) {
         if ('<' !== drupal_substr($v, 0, 1)) {
           $breadcrumb[$k] = '<span>' . $v . '</span>';
-        }
 
-        if ('<li' !== drupal_substr($v, 0, 2)) {
+        } elseif ('<li' !== drupal_substr($v, 0, 3)) {
           $breadcrumb[$k] = '<li class="location-node">' . $v . '</li>';
         }
       }
@@ -57,15 +60,15 @@ function lc3_clean_breadcrumb(array $vars) {
     // Hide breadcrumb if breadcrumbs list has only first element
     if (1 < count($breadcrumb)) {
 
-      $separator = '<li class="location-node"><span class="separator">' . chr(194) . chr(187) . '</span></li>';
-
       // Provide a navigational heading to give context for breadcrumb links to
       // screen-reader users. Make the heading invisible with .element-invisible.
       $html = '<h2 class="element-invisible">' . t('You are here') . '</h2>'
-        . '<ul class="breadcrumb">' . implode(' ' . $separator . ' ', $breadcrumb) . '</ul>';
-
-      return $html;
+        . '<ul class="breadcrumb">' . PHP_EOL
+        . implode(PHP_EOL, $breadcrumb) . PHP_EOL
+        . '</ul>';
     }
+
+    return $html;
   }
 }
 
